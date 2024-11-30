@@ -13,9 +13,6 @@ if __name__ == '__main__':
         else:
             dict_result[s] = 1
 
-    result = []
-    for s in dict_result:
-        if dict_result[s] == 2:
-            result.append(s)
-
-    print(result)
+    for string, count in dict_result.items():
+        if count == 2:
+            print(string)

@@ -10,7 +10,6 @@ if __name__ == '__main__':
         if char.isdigit():
             current_number += char
         else:
-
             if current_number:
                 numbers.append(int(current_number))
                 current_number = ''
