@@ -45,6 +45,17 @@ class ShoppingCart:
     def __init__(self):
         self.__items = []
 
+    @property
+    def items(self):
+        return self.__items
+
+    @items.setter
+    def items(self, value):
+        if isinstance(value, list):
+            self.__items = value
+        else:
+            print('Значение должно быть списком')
+
     def add_product(self, product, quantity):
         for item in self.__items:
             if item['name'] == product.name:
@@ -63,8 +74,6 @@ class ShoppingCart:
     def total_cost(self):
         return sum(item['price'] * item['quantity'] for item in self.__items)
 
-    def list_items(self):
-        return self.__items
 
 product1 = Product('Яблоки', 1.2, 3)
 product2 = Product('Бананы', 0.5, 20)
@@ -81,4 +90,4 @@ cart.remove_product('Бананы')
 
 print(f'Общая стоимость: {cart.total_cost()}')
 
-print(f'Продукты в корзине: {cart.list_items()}')
+print(f'Продукты в корзине: {cart.items}')
