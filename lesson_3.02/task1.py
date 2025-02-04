@@ -12,10 +12,10 @@ def divide(a, b):
     return a/b
 
 while True:
-    try:
-        a = int(input('Введите первое число: '))
-        b = int(input('Введите второе число: '))
+    a = int(input('Введите первое число: '))
+    b = int(input('Введите второе число: '))
 
+    try:
         print(f'Результат деления: {divide(a, b)}')
         break
     except ValueError as e:

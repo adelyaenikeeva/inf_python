@@ -2,8 +2,9 @@
 # Если файла не существует, обработайте исключение FileNotFoundError и попросите пользователя ввести корректное имя файла.
 
 while True:
+    file_name = input('Введите имя файла: ')
+
     try:
-        file_name = input('Введите имя файла: ')
         with open(file_name, 'r') as file:
             content = file.read()
             print(content)
